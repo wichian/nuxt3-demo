@@ -3,8 +3,8 @@ import { createVuetify } from "vuetify"
 
 // import custom icons from helpers
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
-import { mdi } from 'vuetify/iconsets/mdi'
-import { aliases, custom } from "~/helpers/customIcons"
+import { aliases,  mdi } from 'vuetify/iconsets/mdi'
+import { custom } from "~/helpers/customIcons"
 
 // import themes from helpers
 import { LIGHT_THEME, lightTheme, DARK_THEME, darkTheme } from "~/helpers/themes"
@@ -38,7 +38,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         },
         // icons options
         icons: {
-            defaultSet: "custom",
+            defaultSet: "mdi",
             aliases,
             sets: {
                 custom,mdi,

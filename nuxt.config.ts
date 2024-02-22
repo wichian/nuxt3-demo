@@ -41,7 +41,14 @@ export default defineNuxtConfig({
             // @ts-ignore
             nuxt.hooks.hook("vite:extendConfig", (config) => config.plugins.push(vuetify()))
         }
-    ],
+    ],     
+    //runtime config
+    runtimeConfig: {
+      public: {
+        baseApi: process.env.BASE_API,
+        meeApi: process.env.MEE_API || 'https://www.melivecode.com/api',
+      }
+    },
 
     // app config
     app: {
