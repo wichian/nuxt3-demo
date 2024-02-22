@@ -8,12 +8,12 @@ export const lightTheme: ThemeDefinition = {
     colors: {
         background: "#FFFFFF",
 		surface: "#FFFFFF",
-		primary: "#4f46e5",
-		secondary: "#9333ea",
+		primary: "#0091EA",
+		secondary: "#90A4AE",
 		error: "#ef4444",
-		info: "#3b82f6",
-		success: "#22c55e",
-		warning: "#f59e0b",
+		info: "#64B5F6",
+		success: "#76FF03",
+		warning: "#FFA726",
     },
 }
 
@@ -25,12 +25,12 @@ export const darkTheme: ThemeDefinition = {
     colors: {
         background: "#0C111B",
         surface: "#1f2937",
-        primary: "#6366f1",
-        secondary: "#9333ea",
+        primary: "#0091EA",
+        secondary: "#90A4AE",
         error: "#ef4444",
-        info: "#3b82f6",
-        success: "#22c55e",
-        warning: "#f59e0b",
+        info: "#64B5F6",
+        success: "#76FF03",
+        warning: "#FFA726",
     }, 
 }
 

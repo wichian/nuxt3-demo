@@ -23,13 +23,13 @@ useHead({
     <v-app-bar-title>DEMO POS</v-app-bar-title>
 
     <template v-slot:append>
-      <v-btn icon="mdi:mdi-minus"></v-btn>
+      <v-btn icon="mdi:mdi-home"></v-btn>
     </template>
   </v-app-bar>
 
   <v-sheet>
-    
-    <v-card class="mx-auto mt-8" max-width="400" hover  transition="scale-transition" >
+
+    <v-card class="mx-auto mt-8" max-width="400" hover transition="scale-transition">
       <v-card-item>
         <v-card-title>
           Login
@@ -39,31 +39,41 @@ useHead({
         </v-card-subtitle>
       </v-card-item>
 
-     
+
       <v-card-text>
         <v-form>
-          <v-text-field 
-          label="Username"
-          prepend-inner-icon="mdi:mdi-account"
-          clearable
-          ></v-text-field>
-          <v-text-field label="Password"
-          prepend-inner-icon="mdi:mdi-key"
-          ></v-text-field>
-          <v-btn block color="primary">Login</v-btn>
-          <v-btn block>Register</v-btn>
+          <v-text-field label="Username" prepend-inner-icon="mdi:mdi-account" clearable></v-text-field>
+          <v-text-field label="Password" prepend-inner-icon="mdi:mdi-key"></v-text-field>
+          <v-btn  color="primary"
+          variant="elevated"
+          type="submit"
+          block
+          >
+          Login
+          </v-btn>
+
         </v-form>
 
       </v-card-text>
+      <v-card-actions>
+        <v-btn
+          color="secondary"
+          variant="elevated"
+         block
+         >
+        Register
+        </v-btn>
+      </v-card-actions>
+
+
     </v-card>
- 
+
   </v-sheet>
 </template>
 
 
-
 <style scoped>
-.bg { 
+.bg {
   position: absolute;
   object-fit: cover;
   width: 100%;
