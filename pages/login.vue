@@ -41,10 +41,7 @@ function submit(){
 
     <v-row justify="center">
       <v-col md="4" sm="6" lg="3" xs="12" max-width="400">
-        <v-card  class="mx-auto pa-12 pb-8"
-        elevation="8"
-        max-width="448"
-        rounded="lg">
+        <v-card >
           <v-card-title> Login </v-card-title>
           <v-card-subtitle>เข้าสู่ระบบ</v-card-subtitle>
           <v-card-item class="pa-4">

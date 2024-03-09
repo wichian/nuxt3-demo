@@ -2,8 +2,8 @@
 import { ref } from "vue";
 
 const form = ref({
-  username: "admin@live.com",
-  password: "123456",
+  username: "karn.yong@melivecode.com",
+  password: "melivecode",
 });
 
 const { ruleEmail, rulePassLen, ruleRequired } = useFormRules();
@@ -17,31 +17,52 @@ function submitx() {
 
 const router = useRouter();
 const submit = async () => {
-    //isLoading.value = true;
+  //isLoading.value = true;
 
-    // await setTimeout(() => {
-    //     isLoading.value = false;
-    // }, 3000)
+  // await setTimeout(() => {
+  //     isLoading.value = false;
+  // }, 3000)
 
+  // if(form.value.username === 'admin@live.com' && form.value.password === '123456'){
+  //     router.push('/bos')
+  // }
+
+  if (
+    ruleRequired(form.value.username) &&
+    rulePassLen(form.value.password) &&
+    ruleEmail(form.value.username)
+  ) {
+    const config = useRuntimeConfig();
+    const baseApi: string = config.public.baseApi.url;
+
+    const { data, error } = await useFetch(`${baseApi}/login`, {
+      method: "post",
+      body: {
+        username: form.value.username,
+        password: form.value.password,
+        expiresIn: 60000
+      },
+    });
+
+    //alert(data.value.status);
+    const token = useCookie('token');
+
+    if (data.value.status === "ok") {
+      
+       alert(data.value.accessToken); 
+       
+      // this.$cookies.set('token', data.value.accessToken);
+       token.value = data.value.accessToken;
+       localStorage.setItem('token', data.value.accessToken);
+
+        router.push("/bos");
+    }
     
 
-    // if(form.value.username === 'admin@live.com' && form.value.password === '123456'){
-    //     router.push('/bos')
-    // }
 
-    if(ruleRequired(form.value.username)  && rulePassLen(form.value.password) && ruleEmail(form.value.username)){
-       
-        const config = useRuntimeConfig()
-        const baseApi = config.public.baseApi
-
-        alert(baseApi);
-
-        
-        //router.push('/dashboard')
-    }
-
+    //router.push('/dashboard')
+  }
 };
-
 </script>
 
 <template>

@@ -45,9 +45,13 @@ export default defineNuxtConfig({
     //runtime config
     runtimeConfig: {
       public: {
-        baseApi: process.env.BASE_API,
-        meeApi: process.env.MEE_API || 'https://www.melivecode.com/api',
-      }
+        baseApi: {
+            url: process.env.BASE_API || 'https://www.melivecode.com/api',
+        },
+        meeApi: {
+            url: process.env.MEE_API || 'https://www.melivecode.com/api',
+        },
+      },
     },
 
     // app config
